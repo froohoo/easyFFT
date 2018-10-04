@@ -1,5 +1,6 @@
 # easyFFT
-Simple Audio Analysis and Display Utility
+Simple Audio Analysis and Display Utility to produce graphical output as shown below. The top (blue) plot is the raw audio waveform. The bottom (red) plot is the power spectrum density from the FFT of the input signal.
+
 ![easyFFT Screenshot](easyFFT.png)
 
 ## Background
