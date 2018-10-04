@@ -1,6 +1,6 @@
 # easyFFT
 Simple Audio Analysis and Display Utility
-![easyFFT Screenshot][easyFFT.png]
+![easyFFT Screenshot][easyFFT]
 
 ## Background
 This is my proof of concept sound analysis / signal processing tool that I wrote in support of my larger project to train a neural network to identify audio signatures from aircraft. easyFFT was developed on an Nvidia Jetson TX2 board with a Mircrosoft USB Lifecam Cinema for the mic input.
