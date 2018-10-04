@@ -15,7 +15,8 @@ The following python libraries will need to be installed via pip or other. I lis
  * numpy      (numpy)       v. 1.14.2
 
 ### Default Audio settings
-```capset = {
+```
+capset = {
         'TYPE'    : alsaaudio.PCM_CAPTURE,
         'MODE'    : alsaaudio.PCM_NORMAL,
         'FORMAT'  : alsaaudio.PCM_FORMAT_S16_LE,
