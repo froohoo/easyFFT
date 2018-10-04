@@ -15,7 +15,7 @@ The following python libraries will need to be installed via pip or other. I lis
  * numpy      (numpy)       v. 1.14.2
 
 ### Default Audio settings
-capset = {
+`capset = {
         'TYPE'    : alsaaudio.PCM_CAPTURE,
         'MODE'    : alsaaudio.PCM_NORMAL,
         'FORMAT'  : alsaaudio.PCM_FORMAT_S16_LE,
@@ -24,7 +24,7 @@ capset = {
         'RATE'    : 44100,
         'PERIODSZ': 2048, 
         'SAMPLESZ':.1
-        }
+        }`
 
 #### Running
 After updating necessary settings for your hardware run the easyFFT.py script. Since the goal is not to capture audio for playback, dropped frames are okay, but if you see them excessively it may indicate your capture window is too small ('SAMPLESZ') or that your capture rate is too high ('RATE'). If exceptions are thrown, you may need to lower/adjust the PERIODSZ as well.
