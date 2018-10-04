@@ -37,6 +37,7 @@ x = np.arange( ( (capset['RATE'] * capset['SAMPLESZ']) //
                  (capset['PERIODSZ']) + 
                  ( (capset['RATE'] * capset['SAMPLESZ']) %
                   capset['PERIODSZ'] > 0) ) * capset['PERIODSZ'] )
+print("<----- PRESS ENTER KEY IN THIS TERMINAL TO TERMINATE PROCSSING ----->")
 print("Lossless capture rate will be %d frames"%(len(x),))
 init_ary = np.zeros(len(x))
 time_line, = time_plt.plot(x, init_ary, 'b')
@@ -70,7 +71,7 @@ def rec_thread(run, inp, audio_in, settings, xlen):
                 local_buf.extend([unpack('h', data[i:i+2])[0] for i in range(0,2*l,2)])
         audio_in.extend(local_buf)    
         if len(audio_in) > xlen :
-            print("Dropped %d frames at %f"%(len(audio_in)-xlen, time()))
+            print("Dropped %d frames at %f"%(len(audio_in), time()))
         local_buf.clear()
 
 thread.start_new_thread(rec_thread, (run, inp, audio_in, capset, len(x)))
