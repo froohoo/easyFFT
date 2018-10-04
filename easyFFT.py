@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 #!/usr/bin/python3
 
-import struct 
+#import struct 
+from struct import unpack as unpack
 import alsaaudio
 import _thread as thread
-import time
-import audioop
+from time import time as time
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -67,10 +67,10 @@ def rec_thread(run, inp, audio_in, settings, xlen):
             l, data = inp.read()
             #assert(l>0)
             if l:
-                local_buf.extend([struct.unpack('h', data[i:i+2])[0] for i in range(0,2*l,2)])
+                local_buf.extend([unpack('h', data[i:i+2])[0] for i in range(0,2*l,2)])
         audio_in.extend(local_buf)    
         if len(audio_in) > xlen :
-            print("Dropped %d frames at %f"%(len(audio_in)-xlen, time.time()))
+            print("Dropped %d frames at %f"%(len(audio_in)-xlen, time()))
         local_buf.clear()
 
 thread.start_new_thread(rec_thread, (run, inp, audio_in, capset, len(x)))
