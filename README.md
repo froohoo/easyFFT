@@ -1,8 +1,13 @@
 # easyFFT
-Simple Audio Analysis and Display Utility
+Simple Audio Analysis and Display Utility to produce graphical output as shown below. The top (blue) plot is the raw audio waveform. The bottom (red) plot is the power spectrum density from the FFT of the input signal.
+
+![easyFFT Screenshot](easyFFT.png)
 
 ## Background
 This is my proof of concept sound analysis / signal processing tool that I wrote in support of my larger project to train a neural network to identify audio signatures from aircraft. easyFFT was developed on an Nvidia Jetson TX2 board with a Mircrosoft USB Lifecam Cinema for the mic input.
+
+![Hardware Setup](IMG_4735.JPG)
+
 
 ## Usage
 It is likely that the capture settings will need to be updated to match your hardware, especially the device. I believe the other capture settings should work for most modern microphones. To determine the location of your microphone/input device, run <b> alrecord -l</b> and replace the DEVICE setting with hw:X,Y for your device, where X=Card #, and Y = Subdevice #.
